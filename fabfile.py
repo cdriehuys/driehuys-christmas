@@ -32,7 +32,7 @@ def get_local_settings():
     settings['base_dir'] = os.path.dirname(os.path.abspath(__file__))
 
     settings['project_name'] = 'driehuys-christmas'
-    settings['project_package'] = 'driehuys-christmas'
+    settings['project_package'] = 'driehuys_christmas'
     settings['project_url'] = 'https://github.com/cdriehuys/driehuys-christmas'
 
     settings['email'] = 'cdriehuys@gmail.com'
