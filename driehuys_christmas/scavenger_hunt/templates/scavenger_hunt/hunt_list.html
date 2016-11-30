@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  {% for hunt in hunts %}
+
+    <h1>{{ hunt.title }}</h1>
+
+  {% endfor %}
+
+{% endblock %}
