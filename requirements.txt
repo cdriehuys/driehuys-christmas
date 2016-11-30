@@ -1,2 +1,5 @@
 django >= 1.10, < 1.11
+django-compressor
+django-sass-processor
+libsass
 gunicorn
