@@ -1,5 +1,15 @@
 from django.views import generic
 
+from scavenger_hunt import models
+
+
+class HuntDetailView(generic.DetailView):
+    """
+    View for displaying a scavenger hunt's details.
+    """
+    model = models.ScavengerHunt
+    template_name = 'scavenger_hunt/hunt_detail.html'
+
 
 class HuntListView(generic.base.TemplateView):
     """

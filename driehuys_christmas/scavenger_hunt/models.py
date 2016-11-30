@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.urls import reverse
 
 
 class ScavengerHunt(models.Model):
@@ -16,3 +17,9 @@ class ScavengerHunt(models.Model):
         Return the hunt's title.
         """
         return self.title
+
+    def get_absolute_url(self) -> str:
+        """
+        Get the URL of the hunt's detail view.
+        """
+        return reverse('scavenger_hunt:hunt-detail', kwargs={'pk': self.pk})

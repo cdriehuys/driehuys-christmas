@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  <h1>{{ scavengerhunt.title }}</h1>
+
+  {% if scavengerhunt.completed %}
+    <p>This hunt is completed.</p>
+  {% else %}
+    <p>This hunt is incomplete.</p>
+  {% endif %}
+
+{% endblock %}
