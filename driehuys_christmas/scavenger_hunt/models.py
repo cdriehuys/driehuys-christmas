@@ -8,10 +8,11 @@ class ScavengerHunt(models.Model):
     """
     completed = models.BooleanField(default=False)
     final_text = models.TextField(help_text='This text will be displayed after all puzzles in the hunt are completed.')
+    title = models.CharField(max_length=255)
     user = models.ForeignKey(settings.AUTH_USER_MODEL)
 
     def __str__(self) -> str:
         """
-        Return a string describing this scavenger hunt.
+        Return the hunt's title.
         """
-        return "Scavenger hunt for {user}".format(user=self.user.username)
+        return self.title
