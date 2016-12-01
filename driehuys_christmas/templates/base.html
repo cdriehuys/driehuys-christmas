@@ -10,6 +10,8 @@
 
     <title>{% block page_title %}Christmas Scavenger Hunt{% endblock %}</title>
 
+    {% block extra_styles %}{% endblock %}
+
     <link rel='stylesheet' href='{% sass_src "css/main.scss" %}' />
 
   </head>
@@ -19,6 +21,8 @@
     <main>
       {% block content %}{% endblock %}
     </main>
+
+    {% block extra_scripts %}{% endblock %}
 
   </body>
 

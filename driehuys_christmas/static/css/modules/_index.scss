@@ -1,0 +1,23 @@
+.index {
+  @include element('subtitle') {
+    font-size: $font-size-h3;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  @include element('title') {
+    font-family: $index-title-font-family;
+    font-size: $font-size-h1;
+    margin: $index-title-margin;
+    text-align: center;
+
+    @include media($break-tablet-up) {
+      font-size: $font-size-h1 * $index-title-font-size-mutliplier-tablet;
+      margin: $index-title-margin-tablet;
+    }
+
+    @include media($break-desktop-up) {
+      font-size: $font-size-h1 * $index-title-font-size-mutliplier-desktop;
+    }
+  }
+}

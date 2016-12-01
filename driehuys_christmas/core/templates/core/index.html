@@ -1,9 +1,59 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
+
+{% block extra_styles %}
+
+  <link href='https://fonts.googleapis.com/css?family=Mountains+of+Christmas' rel='stylesheet' />
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'>
+
+{% endblock %}
 
 {% block content %}
 
-  <h1>Merry Christmas</h1>
-  <h3>Let the hunt begin</h3>
+  <div class='index'>
+    <h1 class='index__title'>Merry Christmas</h1>
+    <h3 class='index__subtitle'>Let the hunt begin</h3>
+  </div>
+
+{% endblock %}
+
+{% block extra_scripts %}
+
+  <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+  <script src='{% static "js/jquery.lettering-0.6.1.min.js" %}'></script>
+  <script src='{% static "js/textillate.js" %}'></script>
+
+  <script>
+
+    var title = $('.index__title');
+    var subtitle = $('.index__subtitle');
+
+    title.css('visibility', 'hidden');
+    subtitle.css('visibility', 'hidden');
+
+    var animateSubtitle = function() {
+        subtitle.textillate({
+            in: {
+                effect: 'fadeIn',
+                sync: true
+            }
+        })
+    };
+
+    $(function() {
+        title.textillate({
+            autostart: true,
+            delay: 100,
+            initialDelay: 500,
+            in: {
+                callback: animateSubtitle,
+                effect: 'fadeIn'
+            }
+        });
+    })
+
+  </script>
 
 {% endblock %}
