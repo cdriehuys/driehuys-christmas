@@ -11,6 +11,14 @@
     <form class='form' method='post'>
       {% csrf_token %}
 
+      {% if form.errors %}
+
+        <div class='form__error'>
+          Your username and password don't match. Please try again.
+        </div>
+
+      {% endif %}
+
       <div class='form__control'>
         <label for='{{ form.username.id_for_label }}'>{{ form.username.label }}</label>
         <input type='text' id='{{ form.username.id_for_label }}' name='{{ form.username.html_name }}' placeholder='Username' />

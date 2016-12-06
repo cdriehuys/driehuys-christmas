@@ -82,6 +82,12 @@ html {
   .form__control label {
     display: block; }
 
+.form__error {
+  background: #ff8f8f;
+  color: #222;
+  margin: 1em 0;
+  padding: 0.25em; }
+
 .index {
   flex-grow: 1; }
   .index__login-btn {

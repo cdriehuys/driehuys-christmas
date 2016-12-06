@@ -21,4 +21,11 @@
       display: block;
     }
   }
+
+  @include element('error') {
+    background: $form-error-background;
+    color: $form-error-color;
+    margin: $form-error-margin;
+    padding: $form-error-padding;
+  }
 }
