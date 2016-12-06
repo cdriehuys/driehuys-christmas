@@ -13,7 +13,11 @@
 
   <div class='index'>
     <h1 class='index__title'>Merry Christmas</h1>
-    <h3 class='index__subtitle'>Let the hunt begin</h3>
+
+    <h3 class='index__subtitle animate-second'>Let the hunt begin</h3>
+    <p class='index__login-wrapper text-center'>
+      <a class='btn--large index__login-btn' id='login-btn' href='{% url "login" %}'><span class='animate-second'>Log In</span></a>
+    </p>
   </div>
 
 {% endblock %}
@@ -27,18 +31,20 @@
   <script>
 
     var title = $('.index__title');
-    var subtitle = $('.index__subtitle');
+    var secondary = $('.animate-second');
+    var loginBtn = $('#login-btn');
 
-    title.css('visibility', 'hidden');
-    subtitle.css('visibility', 'hidden');
+    var animateSecondary = function() {
+        secondary.each(function() {
+            $(this).textillate({
+                in: {
+                    effect: 'fadeIn',
+                    sync: true
+                }
+            });
+        });
 
-    var animateSubtitle = function() {
-        subtitle.textillate({
-            in: {
-                effect: 'fadeIn',
-                sync: true
-            }
-        })
+        loginBtn.fadeIn().css('display', 'inline-block');
     };
 
     $(function() {
@@ -47,7 +53,7 @@
             delay: 100,
             initialDelay: 500,
             in: {
-                callback: animateSubtitle,
+                callback: animateSecondary,
                 effect: 'fadeIn'
             }
         });

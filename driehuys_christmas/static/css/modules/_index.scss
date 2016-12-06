@@ -1,9 +1,22 @@
 .index {
   flex-grow: 1;
 
+  @include element('login-btn') {
+    display: none;
+  }
+
+  @include element('login-wrapper') {
+    margin-top: $index-login-margin-top;
+
+    @include media($break-tablet-up) {
+      margin-top: $index-login-margin-top-tablet;
+    }
+  }
+
   @include element('subtitle') {
     text-align: center;
     text-transform: uppercase;
+    visibility: hidden;
   }
 
   @include element('title') {
@@ -13,6 +26,7 @@
     font-size: $base-size;
     margin: $index-title-margin;
     text-align: center;
+    visibility: hidden;
 
     @include media($break-tablet-up) {
       font-size: $base-size * $index-title-font-size-multiplier-tablet;

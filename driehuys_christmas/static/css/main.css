@@ -41,18 +41,22 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.btn {
+.btn, .btn--large {
   background: transparent;
   border: 1px solid #d9d9d9;
   color: #d9d9d9;
+  display: inline-block;
   font-size: 1em;
-  padding: 0.5em; }
-  .btn:hover {
+  padding: 0.5em;
+  text-decoration: none; }
+  .btn:hover, .btn--large:hover {
     background: #d9d9d9;
     color: #222; }
   @media screen and (min-width: 481px) {
-    .btn {
+    .btn, .btn--large {
       font-size: 1.25em; } }
+  .btn--large {
+    font-size: 150%; }
 
 .container {
   margin-left: auto;
@@ -80,14 +84,23 @@ html {
 
 .index {
   flex-grow: 1; }
+  .index__login-btn {
+    display: none; }
+  .index__login-wrapper {
+    margin-top: 4em; }
+    @media screen and (min-width: 481px) {
+      .index__login-wrapper {
+        margin-top: 6em; } }
   .index__subtitle {
     text-align: center;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    visibility: hidden; }
   .index__title {
     font-family: "Mountains of Christmas", cursive;
     font-size: 3rem;
     margin: 1em 0 0.5em 0;
-    text-align: center; }
+    text-align: center;
+    visibility: hidden; }
     @media screen and (min-width: 481px) {
       .index__title {
         font-size: 4.5rem;
