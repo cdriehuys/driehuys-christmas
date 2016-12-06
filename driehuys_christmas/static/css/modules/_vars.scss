@@ -2,17 +2,39 @@
 $body-bg-end: #555 100%;
 $body-bg-start: #222 0%;
 
-$color-text: #d9d9d9;
-
 $break-tablet-up: new-breakpoint(min-width 481px);
 $break-desktop-up: new-breakpoint(min-width 941px);
+
+$color-gray: #222;
+$color-text: #d9d9d9;
+
+$container-margin: .5em;
+$container-width: 50em + $container-margin * 2;
+
+$festive-font-family: 'Mountains of Christmas', cursive;
+
+
+// Buttons
+
+$btn-border: 1px solid $color-text;
+$btn-padding: .5em;
+$btn-size: 1em;
+$btn-size-tablet: 1.25em;
+
+
+// Forms
+
+$form-control-border: 1px solid $color-text;
+$form-control-margin: 0 0 1em 0;
+$form-input-margin: .25em 0;
+$form-input-padding: .5em;
 
 
 // Index
 
-$index-title-font-family: 'Mountains of Christmas', cursive;
-$index-title-font-size-mutliplier-desktop: 2;
-$index-title-font-size-mutliplier-tablet: 1.5;
+$index-title-font-family: $festive-font-family;
+$index-title-font-size-multiplier-desktop: 2;
+$index-title-font-size-multiplier-tablet: 1.5;
 $index-title-margin: 1em 0 .5em 0;
 $index-title-margin-tablet: 2em 0 1em 0;
 
@@ -31,3 +53,4 @@ $font-size-headings: (
 );
 $font-size-multiplier-desktop: 1.5;
 $font-size-multiplier-tablet: 1.25;
+$heading-margin-multiplier: .5;       // heading margin as a multiplier of its font-size

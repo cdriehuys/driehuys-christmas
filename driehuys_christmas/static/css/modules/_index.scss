@@ -15,12 +15,12 @@
     text-align: center;
 
     @include media($break-tablet-up) {
-      font-size: $base-size * $index-title-font-size-mutliplier-tablet;
+      font-size: $base-size * $index-title-font-size-multiplier-tablet;
       margin: $index-title-margin-tablet;
     }
 
     @include media($break-desktop-up) {
-      font-size: $base-size * $index-title-font-size-mutliplier-desktop;
+      font-size: $base-size * $index-title-font-size-multiplier-desktop;
     }
   }
 }

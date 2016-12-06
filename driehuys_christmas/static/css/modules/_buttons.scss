@@ -1,0 +1,17 @@
+.btn {
+  background: transparent;
+  border: $btn-border;
+  color: $color-text;
+  font-size: $btn-size;
+  padding: $btn-padding;
+
+  &:hover {
+    background: $color-text;
+    color: $color-gray;
+  }
+
+  @include media($break-tablet-up) {
+    font-size: $btn-size-tablet;
+  }
+}
+

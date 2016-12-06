@@ -8,6 +8,7 @@ body {
     $base-size: map_get($font-size-headings, $i);
 
     font-size: $base-size;
+    margin: $base-size * $heading-margin-multiplier 0;
 
     @include media($break-tablet-up) {
       font-size: $base-size * $font-size-multiplier-tablet;

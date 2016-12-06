@@ -1,0 +1,24 @@
+.form {
+  @include element('control') {
+    margin: $form-control-margin;
+
+    input {
+      background: transparent;
+      border: 0;
+      border-bottom: $form-control-border;
+      color: $color-text;
+      margin: $form-input-margin;
+      padding: $form-input-padding;
+      width: 100%;
+
+      &:focus {
+        border: $form-control-border;
+        outline: 0;
+      }
+    }
+
+    label {
+      display: block;
+    }
+  }
+}
