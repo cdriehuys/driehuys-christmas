@@ -1,4 +1,9 @@
 .index {
+  @include linear-gradient(315, $index-background-color-start, $index-background-color-end);
+
+  color: $index-color;
+  flex-grow: 1;
+
   @include element('subtitle') {
     font-size: $font-size-h3;
     text-align: center;

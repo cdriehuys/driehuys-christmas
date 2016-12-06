@@ -41,23 +41,38 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.index__subtitle {
-  font-size: 1.5rem;
-  text-align: center;
-  text-transform: uppercase; }
+.index {
+  background-color: #222;
+  background-image: -webkit-linear-gradient(-585, #222, #333);
+  background-image: linear-gradient(315,#222, #333);
+  color: #f3f3f3;
+  flex-grow: 1; }
+  .index__subtitle {
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: uppercase; }
+  .index__title {
+    font-family: "Mountains of Christmas", cursive;
+    font-size: 3rem;
+    margin: 1em 0 0.5em 0;
+    text-align: center; }
+    @media screen and (min-width: 481px) {
+      .index__title {
+        font-size: 4.5rem;
+        margin: 2em 0 1em 0; } }
+    @media screen and (min-width: 941px) {
+      .index__title {
+        font-size: 6rem; } }
 
-.index__title {
-  font-family: "Mountains of Christmas", cursive;
-  font-size: 3rem;
-  margin: 1em 0 0.5em 0;
-  text-align: center; }
-  @media screen and (min-width: 481px) {
-    .index__title {
-      font-size: 4.5rem;
-      margin: 2em 0 1em 0; } }
-  @media screen and (min-width: 941px) {
-    .index__title {
-      font-size: 6rem; } }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; }
 
 body {
   font-family: sans-serif; }
