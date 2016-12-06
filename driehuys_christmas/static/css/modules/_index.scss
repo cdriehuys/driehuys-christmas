@@ -1,28 +1,26 @@
 .index {
-  @include linear-gradient(315, $index-background-color-start, $index-background-color-end);
-
-  color: $index-color;
   flex-grow: 1;
 
   @include element('subtitle') {
-    font-size: $font-size-h3;
     text-align: center;
     text-transform: uppercase;
   }
 
   @include element('title') {
+    $base-size: map_get($font-size-headings, 1);
+
     font-family: $index-title-font-family;
-    font-size: $font-size-h1;
+    font-size: $base-size;
     margin: $index-title-margin;
     text-align: center;
 
     @include media($break-tablet-up) {
-      font-size: $font-size-h1 * $index-title-font-size-mutliplier-tablet;
+      font-size: $base-size * $index-title-font-size-mutliplier-tablet;
       margin: $index-title-margin-tablet;
     }
 
     @include media($break-desktop-up) {
-      font-size: $font-size-h1 * $index-title-font-size-mutliplier-desktop;
+      font-size: $base-size * $index-title-font-size-mutliplier-desktop;
     }
   }
 }

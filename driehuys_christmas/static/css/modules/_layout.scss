@@ -1,4 +1,6 @@
 body {
+  @include linear-gradient(170deg, $body-bg-start, $body-bg-end);
+
   min-height: 100vh;
   display: flex;
   flex-direction: column;

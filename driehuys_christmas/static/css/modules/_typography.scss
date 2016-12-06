@@ -1,3 +1,20 @@
 body {
+  color: $font-color;
   font-family: $font-family-base;
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    $base-size: map_get($font-size-headings, $i);
+
+    font-size: $base-size;
+
+    @include media($break-tablet-up) {
+      font-size: $base-size * $font-size-multiplier-tablet;
+    }
+
+    @include media($break-desktop-up) {
+      font-size: $base-size * $font-size-multiplier-desktop;
+    }
+  }
 }
