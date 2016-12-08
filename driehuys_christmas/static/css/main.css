@@ -123,10 +123,19 @@ body {
   display: flex;
   flex-direction: column; }
 
+footer {
+  flex-grow: 0;
+  font-size: 85%;
+  padding: .5em; }
+
 main {
   display: flex;
   flex-direction: column;
   flex-grow: 1; }
+
+a,
+a:visited {
+  color: #a6a6a6; }
 
 body {
   color: #d9d9d9;

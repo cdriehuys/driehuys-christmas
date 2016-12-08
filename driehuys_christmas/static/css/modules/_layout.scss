@@ -6,6 +6,12 @@ body {
   flex-direction: column;
 }
 
+footer {
+  flex-grow: 0;
+  font-size: 85%;
+  padding: .5em;
+}
+
 main {
   display: flex;
   flex-direction: column;

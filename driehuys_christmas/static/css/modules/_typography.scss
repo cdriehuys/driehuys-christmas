@@ -1,3 +1,8 @@
+a,
+a:visited {
+  color: darken($color-text, 20%);
+}
+
 body {
   color: $font-color;
   font-family: $font-family-base;

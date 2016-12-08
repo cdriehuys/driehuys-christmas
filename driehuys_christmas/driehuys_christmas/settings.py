@@ -105,6 +105,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Login Settings
+
+LOGIN_REDIRECT_URL = 'scavenger_hunt:hunt-list'
+LOGOUT_REDIRECT_URL = 'core:index'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

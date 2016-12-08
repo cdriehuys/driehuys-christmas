@@ -24,6 +24,12 @@
       {% block content %}{% endblock %}
     </main>
 
+    <footer>
+      {% if request.user.is_authenticated %}
+        <p class='text-center'>Wrong account? <a href='{% url "logout" %}'>Log out</a>.</p>
+      {% endif %}
+    </footer>
+
     {% block extra_scripts %}{% endblock %}
 
   </body>
