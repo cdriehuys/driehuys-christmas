@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.urls import reverse
 from django.utils import timezone
+from django.utils.functional import cached_property
 
 
 class Puzzle(models.Model):
@@ -44,8 +45,31 @@ class ScavengerHunt(models.Model):
         """
         return self.title
 
+    @cached_property
+    def decimal_completion(self) -> float:
+        """
+        Get the hunt's progress as a float between 0 and 1.
+
+        Returns:
+            The number of completed puzzles in the hunt divided by the
+            total number of puzzles in the hunt.
+        """
+        puzzles = Puzzle.objects.filter(hunt=self)
+        completed = puzzles.filter(completed=True)
+
+        return completed.count() / puzzles.count()
+
     def get_absolute_url(self) -> str:
         """
         Get the URL of the hunt's detail view.
         """
         return reverse('scavenger_hunt:hunt-detail', kwargs={'pk': self.pk})
+
+    def percent_completion(self) -> float:
+        """
+        Get the hunt's progress as a float between 0 and 100.
+
+        Returns:
+            ``decimal_completion`` multiplied by 100.
+        """
+        return self.decimal_completion * 100

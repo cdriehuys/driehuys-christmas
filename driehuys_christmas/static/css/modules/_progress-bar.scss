@@ -1,0 +1,27 @@
+.progress-bar {
+	height: $progress-bar-height;
+	position: relative;
+	background: $progress-bar-bg;
+	border-radius: 25px;
+  margin: $progress-bar-margin;
+	padding: 5px;
+
+  span {
+    display: block;
+    height: 100%;
+    border-radius: 20px 8px 8px 20px;
+    background-color: $progress-bar-color;
+    position: relative;
+    overflow: hidden;
+
+    &[style*='100'] {
+      border-bottom-right-radius: 20px;
+      border-top-right-radius: 20px;
+    }
+  }
+
+  @include element('label') {
+    margin: $progress-bar-label-margin;
+    text-align: center;
+  }
+}

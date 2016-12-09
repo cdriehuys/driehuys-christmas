@@ -6,6 +6,11 @@
   <div class='container'>
     <h1 class='text-center festive'>{{ scavengerhunt.title }}</h1>
 
+    <p class='progress-bar__label'>{{ scavengerhunt.percent_completion|floatformat:0 }}% complete</p>
+    <div class='progress-bar'>
+      <span style='width: {{ scavengerhunt.percent_completion }}%'></span>
+    </div>
+
     <div class='puzzles'>
 
       {% for puzzle in puzzles %}

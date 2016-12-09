@@ -6,6 +6,7 @@ $break-tablet-up: new-breakpoint(min-width 481px);
 $break-desktop-up: new-breakpoint(min-width 941px);
 
 $color-gray: #222;
+$color-success: #95C89C;
 $color-text: #d9d9d9;
 
 $container-margin: .5em;
@@ -45,11 +46,21 @@ $index-title-margin: 1em 0 .5em 0;
 $index-title-margin-tablet: 2em 0 1em 0;
 
 
+// Progress Bars
+
+$progress-bar-bg: #555;
+$progress-bar-border-radius: 3px;
+$progress-bar-color: $color-success;
+$progress-bar-height: 20px;
+$progress-bar-label-margin: 0 0 .25em 0;
+$progress-bar-margin: 0 0 2em 0;
+
+
 // Puzzles
 
 $puzzle-border: 1px solid $color-text; //rgb(199, 199, 199);
 $puzzle-border-radius: 3px;
-$puzzle-bg-complete: rgb(149, 200, 156);
+$puzzle-bg-complete: $color-success;
 $puzzle-color: $color-text;
 $puzzle-color-complete: $color-gray;
 $puzzle-margin: 1em;
