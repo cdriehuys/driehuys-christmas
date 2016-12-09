@@ -11,6 +11,16 @@ class HuntDetailView(generic.DetailView):
     model = models.ScavengerHunt
     template_name = 'scavenger_hunt/hunt_detail.html'
 
+    def get_context_data(self, **kwargs):
+        """
+        Get the context data to be passed to the template.
+        """
+        context = super(HuntDetailView, self).get_context_data(**kwargs)
+
+        context['puzzles'] = self.object.puzzle_set.all()
+
+        return context
+
 
 class HuntListView(generic.ListView):
     """

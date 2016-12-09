@@ -45,6 +45,21 @@ $index-title-margin: 1em 0 .5em 0;
 $index-title-margin-tablet: 2em 0 1em 0;
 
 
+// Puzzles
+
+$puzzle-border: 1px solid $color-text; //rgb(199, 199, 199);
+$puzzle-border-radius: 3px;
+$puzzle-bg-complete: rgb(149, 200, 156);
+$puzzle-color: $color-text;
+$puzzle-color-complete: $color-gray;
+$puzzle-margin: 1em;
+$puzzle-max-width: 300px;
+$puzzle-padding: .5em;
+$puzzle-title-underline: 1px solid darken($color-text, 20%);
+$puzzle-title-underline-complete: 1px solid lighten($color-gray, 20%);
+$puzzle-title-underline-margin: 0 2em .75rem 2em;
+
+
 // Typography
 
 $font-color: $color-text;

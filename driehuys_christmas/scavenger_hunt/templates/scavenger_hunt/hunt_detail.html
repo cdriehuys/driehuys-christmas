@@ -6,11 +6,19 @@
   <div class='container'>
     <h1 class='text-center festive'>{{ scavengerhunt.title }}</h1>
 
-    {% if scavengerhunt.completed %}
-      <p>This hunt is completed.</p>
-    {% else %}
-      <p>This hunt is incomplete.</p>
-    {% endif %}
+    <div class='puzzles'>
+
+      {% for puzzle in puzzles %}
+
+        <div class='puzzle{% if puzzle.completed %}--complete{% endif %}'>
+          <h3 class='puzzle__title'><a class='puzzle{% if puzzle.completed %}--complete{% endif %}__link' href='{{ puzzle.get_absolute_url }}'>{{ puzzle.title }}</a></h3>
+          <div class='puzzle{% if puzzle.completed %}--complete{% endif %}__title-underline'></div>
+          <p class='puzzle__description'>{{ puzzle.text|truncatewords:25 }}</p>
+        </div>
+
+      {% endfor %}
+
+    </div>
 
   </div>
 
