@@ -4,6 +4,27 @@ from django.urls import reverse
 from django.utils import timezone
 
 
+class Puzzle(models.Model):
+    """
+    Model representing a single puzzle in a scavenger hunt.
+    """
+    answer = models.CharField(max_length=255)
+    completed = models.BooleanField(default=False)
+    hunt = models.ForeignKey('scavenger_hunt.ScavengerHunt')
+    order = models.PositiveIntegerField(default=0)
+    text = models.TextField()
+    title = models.CharField(max_length=255)
+
+    class Meta:
+        ordering = ('order',)
+
+    def __str__(self):
+        """
+        Return the puzzle's title.
+        """
+        return self.title
+
+
 class ScavengerHunt(models.Model):
     """
     Model representing an entire scavenger hunt.
