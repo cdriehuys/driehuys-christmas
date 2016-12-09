@@ -21,5 +21,12 @@
 
     font-size: 150%;
   }
+  
+  @include modifier('large-block') {
+    @extend .btn;
+
+    display: block;
+    font-size: 200%;
+  }
 }
 

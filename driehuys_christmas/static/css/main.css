@@ -41,7 +41,7 @@ html {
 *, *::after, *::before {
   box-sizing: inherit; }
 
-.btn, .btn--large {
+.btn, .btn--large, .btn--large-block {
   background: transparent;
   border: 1px solid #d9d9d9;
   color: #d9d9d9;
@@ -49,14 +49,17 @@ html {
   font-size: 1em;
   padding: 0.5em;
   text-decoration: none; }
-  .btn:hover, .btn--large:hover {
+  .btn:hover, .btn--large:hover, .btn--large-block:hover {
     background: #d9d9d9;
     color: #222; }
   @media screen and (min-width: 481px) {
-    .btn, .btn--large {
+    .btn, .btn--large, .btn--large-block {
       font-size: 1.25em; } }
   .btn--large {
     font-size: 150%; }
+  .btn--large-block {
+    display: block;
+    font-size: 200%; }
 
 .container {
   margin-left: auto;

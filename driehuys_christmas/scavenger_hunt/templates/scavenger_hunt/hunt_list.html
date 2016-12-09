@@ -3,10 +3,20 @@
 
 {% block content %}
 
-  {% for hunt in hunts %}
+  <div class='container'>
 
-    <h1><a href='{{ hunt.get_absolute_url }}'>{{ hunt.title }}</a></h1>
+    {% if hunts %}
 
-  {% endfor %}
+      <h1 class='text-center festive'>Hunts:</h1>
+
+      {% for hunt in hunts %}
+
+        <div class='text-center'><a class='btn--large-block' href='{{ hunt.get_absolute_url }}'>{{ hunt.title }}</a></div>
+
+      {% endfor %}
+
+    {% endif %}
+
+  </div>
 
 {% endblock %}
