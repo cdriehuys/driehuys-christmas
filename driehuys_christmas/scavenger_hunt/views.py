@@ -1,3 +1,4 @@
+from django.http import HttpResponseRedirect
 from django.views import generic
 
 from scavenger_hunt import models
@@ -11,18 +12,23 @@ class HuntDetailView(generic.DetailView):
     template_name = 'scavenger_hunt/hunt_detail.html'
 
 
-class HuntListView(generic.base.TemplateView):
+class HuntListView(generic.ListView):
     """
     View for listing scavenger hunts.
     """
+    context_object_name = 'hunts'
+    model = models.ScavengerHunt
     template_name = 'scavenger_hunt/hunt_list.html'
 
-    def get_context_data(self, **kwargs):
+    def get(self, request, *args, **kwargs):
         """
-        Get the context for the view.
+        Redirect if there is only one hunt.
         """
-        context = super(HuntListView, self).get_context_data(**kwargs)
+        objects = self.get_queryset()
+        if objects.count() == 1:
+            obj = objects.get()
+            url = obj.get_absolute_url()
 
-        context['hunts'] = self.request.user.scavengerhunt_set.all()
+            return HttpResponseRedirect(url)
 
-        return context
+        return super(HuntListView, self).get(request, *args, **kwargs)
