@@ -188,6 +188,9 @@ main {
     .puzzle--complete__title-underline {
       border-bottom: 1px solid #555555; }
 
+.puzzle-detail__text {
+  margin: 2em 0; }
+
 .puzzles {
   display: block; }
   @media screen and (min-width: 481px) {

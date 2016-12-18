@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block page_title %}{{ puzzle.title }}{% endblock %}
+
+{% block content %}
+
+  <div class='container'>
+    <h1 class='text-center festive'>{{ puzzle.title }}</h1>
+
+    <p class='text-center'><a class='btn' href='{{ puzzle.hunt.get_absolute_url }}'>Back to Hunt</a></p>
+
+    <p class='puzzle-detail__text'>{{ puzzle.text|linebreaksbr }}</p>
+  </div>
+
+{% endblock %}

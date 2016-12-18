@@ -53,6 +53,12 @@
   }
 }
 
+.puzzle-detail {
+  @include element('text') {
+    margin: 2em 0;
+  }
+}
+
 .puzzles {
   display: block;
 

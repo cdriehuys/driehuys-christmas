@@ -42,3 +42,11 @@ class HuntListView(generic.ListView):
             return HttpResponseRedirect(url)
 
         return super(HuntListView, self).get(request, *args, **kwargs)
+
+
+class PuzzleDetailView(generic.DetailView):
+    """
+    View for displaying a puzzle's details.
+    """
+    model = models.Puzzle
+    template_name = 'scavenger_hunt/puzzle_detail.html'

@@ -25,6 +25,12 @@ class Puzzle(models.Model):
         """
         return self.title
 
+    def get_absolute_url(self):
+        """
+        Get the url of the puzzle's detail view.
+        """
+        return reverse('scavenger_hunt:puzzle-detail', kwargs={'hunt_pk': self.hunt.pk, 'pk': self.pk})
+
 
 class ScavengerHunt(models.Model):
     """
