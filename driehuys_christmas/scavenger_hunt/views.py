@@ -1,6 +1,8 @@
 from django.http import HttpResponseRedirect
+from django.shortcuts import render
 from django.views import generic
 
+from scavenger_hunt import forms
 from scavenger_hunt import models
 
 
@@ -50,3 +52,32 @@ class PuzzleDetailView(generic.DetailView):
     """
     model = models.Puzzle
     template_name = 'scavenger_hunt/puzzle_detail.html'
+
+    def get_context_data(self, **kwargs):
+        """
+        Create the form for answering the puzzle.
+        """
+        context = super(PuzzleDetailView, self).get_context_data(**kwargs)
+
+        form = forms.PuzzleAnswerForm(puzzle=self.object)
+        context['form'] = form
+
+        return context
+
+    def post(self, request, **kwargs):
+        """
+        Handle answer submissions.
+        """
+        self.object = self.get_object()
+        form = forms.PuzzleAnswerForm(data=request.POST, puzzle=self.object)
+
+        if form.is_valid():
+            self.object.completed = True
+            self.object.save()
+
+            return HttpResponseRedirect(self.object.hunt.get_absolute_url())
+
+        context = self.get_context_data()
+        context['form'] = form
+
+        return render(request, self.get_template_names(), context)

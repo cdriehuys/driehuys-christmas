@@ -267,6 +267,9 @@ h6 {
     h6 {
       font-size: 0.99rem; } }
 
+strong {
+  font-weight: bold; }
+
 .festive {
   font-family: "Mountains of Christmas", cursive; }
 

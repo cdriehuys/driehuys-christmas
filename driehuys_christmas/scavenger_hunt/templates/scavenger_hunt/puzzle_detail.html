@@ -11,6 +11,36 @@
     <p class='text-center'><a class='btn' href='{{ puzzle.hunt.get_absolute_url }}'>Back to Hunt</a></p>
 
     <p class='puzzle-detail__text'>{{ puzzle.text|linebreaksbr }}</p>
+
+    {% if puzzle.completed %}
+
+      <p><strong>Your Answer:</strong> {{ puzzle.answer }}</p>
+
+    {% else %}
+
+      <form class='form' method='post'>
+        {% csrf_token %}
+
+        {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+
+            <div class='form__error'>
+              <p>{{ error }}</p>
+            </div>
+
+          {% endfor %}
+        {% endif %}
+
+        <div class='form__control'>
+          <label for='{{ form.answer.id_for_label }}'>Answer</label>
+          <input id='{{ form.answer.id_for_label }}' name='{{ form.answer.html_name }}' placeholder='Answer' {% if form.answer.value %}value='{{ form.answer.value }}'{% endif %} required />
+        </div>
+
+        <p class='text-center'><button type='submit' class='btn'>Submit</button></p>
+      </form>
+
+    {% endif %}
+
   </div>
 
 {% endblock %}

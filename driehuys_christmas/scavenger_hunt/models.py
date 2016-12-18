@@ -31,6 +31,12 @@ class Puzzle(models.Model):
         """
         return reverse('scavenger_hunt:puzzle-detail', kwargs={'hunt_pk': self.hunt.pk, 'pk': self.pk})
 
+    def is_valid_answer(self, answer):
+        """
+        Determine if the provided answer is correct.
+        """
+        return answer == self.answer
+
 
 class ScavengerHunt(models.Model):
     """
