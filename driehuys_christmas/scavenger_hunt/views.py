@@ -68,14 +68,14 @@ class PuzzleDetailView(generic.DetailView):
         """
         Handle answer submissions.
         """
-        self.object = self.get_object()
-        form = forms.PuzzleAnswerForm(data=request.POST, puzzle=self.object)
+        puzzle = self.get_object()
+        form = forms.PuzzleAnswerForm(data=request.POST, puzzle=puzzle)
 
         if form.is_valid():
-            self.object.completed = True
-            self.object.save()
+            puzzle.completed = True
+            puzzle.save()
 
-            return HttpResponseRedirect(self.object.hunt.get_absolute_url())
+            return HttpResponseRedirect(puzzle.hunt.get_absolute_url())
 
         context = self.get_context_data()
         context['form'] = form
