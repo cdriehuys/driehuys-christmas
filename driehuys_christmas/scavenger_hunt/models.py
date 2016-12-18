@@ -42,7 +42,6 @@ class ScavengerHunt(models.Model):
     """
     Model representing an entire scavenger hunt.
     """
-    completed = models.BooleanField(default=False)
     final_text = models.TextField(help_text='This text will be displayed after all puzzles in the hunt are completed.')
     time_created = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=255)
@@ -56,6 +55,17 @@ class ScavengerHunt(models.Model):
         Return the hunt's title.
         """
         return self.title
+
+    @cached_property
+    def completed(self) -> bool:
+        """
+        Determine if the hunt is complete yet.
+
+        Returns:
+            ``True`` if all the hunt's puzzles are completed, ``False``
+            otherwise.
+        """
+        return not Puzzle.objects.filter(completed=False).exists()
 
     @cached_property
     def decimal_completion(self) -> float:

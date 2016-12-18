@@ -61,6 +61,7 @@
 
 .puzzles {
   display: block;
+  margin: $puzzles-margin;
 
   @include media($break-tablet-up) {
     display: flex;

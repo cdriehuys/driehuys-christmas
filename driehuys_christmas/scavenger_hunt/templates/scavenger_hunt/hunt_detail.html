@@ -25,6 +25,14 @@
 
     </div>
 
+    {% if scavengerhunt.completed %}
+
+      <h2 class='text-center'>Final Puzzle</h2>
+
+      <p>{{ scavengerhunt.final_text|linebreaksbr }}</p>
+
+    {% endif %}
+
   </div>
 
 {% endblock %}
