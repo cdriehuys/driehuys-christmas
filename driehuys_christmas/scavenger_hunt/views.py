@@ -45,6 +45,12 @@ class HuntListView(generic.ListView):
 
         return super(HuntListView, self).get(request, *args, **kwargs)
 
+    def get_queryset(self):
+        """
+        Filter to only scavenger hunts owned by the current user.
+        """
+        return models.ScavengerHunt.filter(user=self.request.user)
+
 
 class PuzzleDetailView(generic.DetailView):
     """
