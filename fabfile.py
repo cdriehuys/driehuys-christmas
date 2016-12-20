@@ -51,7 +51,7 @@ def get_local_settings():
     settings['django_db_host'] = 'localhost'
     settings['django_db_password'] = 'password'
     settings['django_db_port'] = '5432'
-    settings['django_db_user'] = 'django'
+    settings['django_db_user'] = 'christmasdbuser'
     settings['django_local_settings'] = os.path.join(settings['remote_project_dir'], settings['project_package'],
                                                      settings['project_package'], 'local_settings.py')
     settings['django_secure_settings'] = os.path.join(settings['remote_project_dir'], settings['project_package'],
