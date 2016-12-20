@@ -167,6 +167,11 @@ def update_remote():
 
     # Upload new local settings
     context = {
+        'django_db': settings['django_db'],
+        'django_db_host': settings['django_db_host'],
+        'django_db_password': settings['django_db_password'],
+        'django_db_port': settings['django_db_port'],
+        'django_db_user': settings['django_db_user'],
         'domain_name': env.host,
         'package_name': settings['project_package'],
         'static_root': settings['django_static_root'],

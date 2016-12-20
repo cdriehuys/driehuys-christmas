@@ -7,6 +7,20 @@ DEBUG = False
 STATIC_ROOT = '{{ static_root }}'
 
 
+# Database
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': '{{ django_db }}',
+        'USER': '{{ django_db_user }}',
+        'PASSWORD': '{{ django_db_password }}',
+        'HOST': '{{ django_db_host }}',
+        'PORT': '{{ django_db_port }}',
+    }
+}
+
+
 # Cookie Settings
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
