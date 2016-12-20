@@ -5,4 +5,10 @@
   padding-left: $container-margin;
   padding-right: $container-margin;
   width: 100%;
+
+  @include modifier('small') {
+    @extend .container;
+
+    max-width: $container-width-small;
+  }
 }

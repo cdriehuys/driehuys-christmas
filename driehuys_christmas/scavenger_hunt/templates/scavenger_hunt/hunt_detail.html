@@ -27,9 +27,11 @@
 
     {% if scavengerhunt.completed %}
 
-      <h2 class='text-center'>Final Puzzle</h2>
+      <div class='container--small'>
+        <h2 class='text-center'>Final Puzzle</h2>
 
-      <p>{{ scavengerhunt.final_text|linebreaksbr }}</p>
+        <p>{{ scavengerhunt.final_text|linebreaksbr }}</p>
+      </div>
 
     {% endif %}
 
