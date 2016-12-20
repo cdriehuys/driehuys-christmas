@@ -10,7 +10,7 @@
 
     <p class='text-center'><a class='btn' href='{{ puzzle.hunt.get_absolute_url }}'>Back to Hunt</a></p>
 
-    <p class='puzzle-detail__text'>{{ puzzle.text|linebreaksbr }}</p>
+    <div class='puzzle-detail__text'><pre>{{ puzzle.text }}</pre></div>
 
     {% if puzzle.completed %}
 

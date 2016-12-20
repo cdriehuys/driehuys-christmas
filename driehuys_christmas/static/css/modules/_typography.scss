@@ -25,6 +25,10 @@ body {
   }
 }
 
+pre {
+  line-height: $pre-line-height;
+}
+
 strong {
   font-weight: bold;
 }
