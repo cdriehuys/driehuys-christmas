@@ -47,6 +47,11 @@ def get_local_settings():
     settings['web_root'] = os.path.join('/', 'var', 'www', env.host)
 
     # Django Settings
+    settings['django_db'] = 'christmasdb'
+    settings['django_db_host'] = 'localhost'
+    settings['django_db_password'] = 'password'
+    settings['django_db_port'] = '5432'
+    settings['django_db_user'] = 'django'
     settings['django_local_settings'] = os.path.join(settings['remote_project_dir'], settings['project_package'],
                                                      settings['project_package'], 'local_settings.py')
     settings['django_secure_settings'] = os.path.join(settings['remote_project_dir'], settings['project_package'],
@@ -127,6 +132,7 @@ def prepare_remote():
     to_install = ' '.join(required_packages)
     sudo('apt-get install -y {packages}'.format(packages=to_install))
 
+    _configure_db()
     _configure_gunicorn()
     _configure_nginx()
     _configure_ssl()
@@ -188,6 +194,25 @@ def update_remote():
         management_cmd('collectstatic --noinput')
 
     sudo('systemctl restart gunicorn')
+
+
+def _configure_db():
+    """
+    Configure the project database.
+    """
+    settings = get_local_settings()
+
+    context = {
+        'db_name': settings['django_db'],
+        'db_password': settings['django_db_password'],
+        'db_user': settings['django_db_user'],
+    }
+    _upload_template(
+        'templates/createdb.sql.template',
+        '/tmp/createdb.sql',
+        context)
+    sudo('sudo -u postgres psql -f /tmp/createdb.sql')
+    run('rm /tmp/createdb.sql')
 
 
 def _configure_env():
