@@ -49,7 +49,7 @@ class HuntListView(generic.ListView):
         """
         Filter to only scavenger hunts owned by the current user.
         """
-        return models.ScavengerHunt.filter(user=self.request.user)
+        return models.ScavengerHunt.objects.filter(user=self.request.user)
 
 
 class PuzzleDetailView(generic.DetailView):
