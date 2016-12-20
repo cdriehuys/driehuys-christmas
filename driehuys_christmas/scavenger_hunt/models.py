@@ -79,6 +79,9 @@ class ScavengerHunt(models.Model):
         puzzles = Puzzle.objects.filter(hunt=self)
         completed = puzzles.filter(completed=True)
 
+        if not puzzles.exists():
+            return 1
+
         return completed.count() / puzzles.count()
 
     def get_absolute_url(self) -> str:
