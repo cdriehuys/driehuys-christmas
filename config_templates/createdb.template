@@ -27,7 +27,7 @@ BEGIN
     IF NOT EXISTS (
             SELECT *
             FROM   pg_catalog.pg_user
-            WHERE  username = '{{ db_user }}') THEN
+            WHERE  usename = '{{ db_user }}') THEN
 
         CREATE ROLE {{ db_user }} LOGIN PASSWORD '{{ db_password }}';
 
