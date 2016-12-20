@@ -213,7 +213,7 @@ def _configure_db():
         'db_user': settings['django_db_user'],
     }
     _upload_template(
-        'templates/createdb.sql.template',
+        'config_templates/createdb.sql.template',
         '/tmp/createdb.sql',
         context)
     sudo('sudo -u postgres psql -f /tmp/createdb.sql')
