@@ -38,3 +38,18 @@
   </div>
 
 {% endblock %}
+
+{% block extra_scripts %}
+
+  <script>
+    var puzzles = $('.puzzle, .puzzle--complete');
+    puzzles.each(function () {
+        var link = $(this).find('.puzzle__link, .puzzle--complete__link').attr('href');
+        $(this).on('click', function() {
+            window.location.href = link;
+        });
+        $(this).css('cursor', 'pointer');
+    });
+  </script>
+
+{% endblock %}
