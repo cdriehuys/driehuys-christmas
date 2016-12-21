@@ -54,7 +54,7 @@ class ScavengerHunt(models.Model):
         """
         Return the hunt's title.
         """
-        return self.title
+        return '{title} ({user})'.format(title=self.title, user=self.user)
 
     @cached_property
     def completed(self) -> bool:
