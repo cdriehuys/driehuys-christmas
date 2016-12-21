@@ -27,7 +27,7 @@ body {
 
 pre {
   line-height: $pre-line-height;
-  overflow: scroll;
+  overflow-x: auto;
 }
 
 strong {
